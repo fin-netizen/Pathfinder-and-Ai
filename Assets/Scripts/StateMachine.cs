@@ -6,12 +6,13 @@ public class StateMachine
 
     public IdleState idleState;
     public WalkState walkState;
-
+    public AttackState attackState;
 
     public StateMachine(EnemyScript enemy)
     {
         idleState = new IdleState(enemy, this);
         walkState = new WalkState(enemy, this);
+        attackState = new AttackState(enemy, this);
     }
 
     public void Init(State startingState)
